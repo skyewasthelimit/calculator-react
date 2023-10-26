@@ -4,23 +4,23 @@ import React, { useState, useEffect } from 'react';
 function App() {
   // Use state to manage the calculation value
   const [calculation, setCalculation] = useState(localStorage.getItem('calculation') || '');
+ 
+  // Update the calculation value and store it in localStorage
+  const updateCalculation = (value) => {
+    const newCalculation = calculation + value;
+    setCalculation(newCalculation);
+    localStorage.setItem('calculation', newCalculation);
+  };
 
   // Display the calculation on initial render and whenever the calculation state changes
   useEffect(() => {
-    // Update the calculation value and store it in localStorage
-const updateCalculation = (value) => {
-  const newCalculation = calculation + value;
-  setCalculation(newCalculation);
-  localStorage.setItem('calculation', newCalculation);
-};
-
-// Display the calculation value in the component
-const displayCalculation = () => {
-  const calculationElement = document.querySelector('.js-calculation');
-  if (calculationElement) {
-    calculationElement.innerHTML = calculation;
-  }
-};
+    // Display the calculation value in the component
+    const displayCalculation = () => {
+      const calculationElement = document.querySelector('.js-calculation');
+      if (calculationElement) {
+        calculationElement.innerHTML = calculation;
+      }
+    };
     displayCalculation();
   }, [calculation]);
 
