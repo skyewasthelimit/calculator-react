@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100vw;
+  background-color: #0c0d0e;
+  margin: 20px;
+  padding: 0;
+  display: block;
+}
+
+button {
+  padding: 3.2vw;
+  border-radius: 10%;
+  justify-content: space-between;
+  align-items: normal;
+}
+
+button:hover {
+  background-color:  rgb(199, 195, 195);
+}
+
+.App .equal-button {
+  background-color: #f09a78;
+}
+
+.App .math-button {
+  background-color: #a3a3a2;
+}
+
+p {
+  color: whitesmoke;
+}
+
+.App .display {
+  font-size: 30px;
+  font-weight: 550;
+  background-color: #1b2127;
+  height: 2rem;
+  width: 50%;
+  max-width: 310px;
+}
+
+.App .number-button {
+  font-size: 1rem;
+}
+
+.App .math-button {
+  font-size: 1rem;
+}
+
+.App .equal-button {
+  font-size: 1rem;
+}
