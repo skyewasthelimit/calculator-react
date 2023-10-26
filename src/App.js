@@ -5,7 +5,9 @@ function App() {
   // Use state to manage the calculation value
   const [calculation, setCalculation] = useState(localStorage.getItem('calculation') || '');
 
-// Update the calculation value and store it in localStorage
+  // Display the calculation on initial render and whenever the calculation state changes
+  useEffect(() => {
+    // Update the calculation value and store it in localStorage
 const updateCalculation = (value) => {
   const newCalculation = calculation + value;
   setCalculation(newCalculation);
@@ -19,11 +21,8 @@ const displayCalculation = () => {
     calculationElement.innerHTML = calculation;
   }
 };
-
-  // Display the calculation on initial render and whenever the calculation state changes
-  useEffect(() => {
     displayCalculation();
-  }, [calculation, displayCalculation]);
+  }, [calculation]);
 
   return (
     <div className="App">
